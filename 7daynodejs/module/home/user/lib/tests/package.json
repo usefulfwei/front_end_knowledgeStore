@@ -1,0 +1,5 @@
+{
+    "name": "cat",
+    "main": "./lib/main.js"
+}
+
