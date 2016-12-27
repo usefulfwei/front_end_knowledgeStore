@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="example" style="color:grey; font-family: Arial; font-size: 10px;">
+        A example of paragraph
+    </p>
+    <p id="example2" style="color:#cccccc; font-family: Arial;font-size:5em">
+        A example of paragraph
+    </p>
+
+    <script>
+        window.onload = function(){
+            var para = document.getElementById("example");
+            var para2 = document.getElementById("example2");
+//            alert(para.nodeName+"   "+para.nodeType+"  "+para.nodeValue);
+//            // typeof nodeName  is string
+//            alert(typeof para.style);
+//            //object
+//            alert("the color is" +para.style.color);
+//
+//            alert("the color is" +para2.style.color);
+//            //不是用十六进制，而是用rbg方式进行显示
+//            alert("the font style is "+para.style.fontFamily);
+
+            alert("the font size of para1 is  "+para.style.fontSize);
+            alert("the font size of para2 is  "+para2.style.fontSize);
+            //显示的单位和你之前使用的一样
+        }
+    </script>
+
+
+    <!--<h1>hahaha  hahaah hahaha</h1>-->
+    <!--<h2>hahaha  hahaah hahaha</h2>-->
+    <!--<h3>hahaha  hahaah hahaha</h3>-->
+    <!--<h4>hahaha  hahaah hahaha</h4>-->
+    <!--<h5>hahaha  hahaah hahaha</h5>-->
+    <!--<h6>hahaha  hahaah hahaha</h6>-->
+    <!--<script>-->
+    <!--window.onload = function(){-->
+    <!--//            var headers = document.getElementsByTagName("h*");-->
+    <!--//通配符无法这么使用-->
+    <!--//            var headers = document.getElementsByTagName("*");-->
+    <!--//通配符只能这么使用，只能先限制元素到一个“数组”中，然后再用通配符-->
+    <!--var headers = document.getElementsByTagName("h5");-->
+    <!--for(var i=0;i<headers.length;i++){-->
+    <!--var header = headers[i];-->
+    <!--header.style.color = "red";-->
+    <!--}-->
+    <!--}-->
+    <!--</script>
+</body>
+</html>

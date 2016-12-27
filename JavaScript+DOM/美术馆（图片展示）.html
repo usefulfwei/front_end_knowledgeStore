@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="美术馆.js"></script>
+    <link type="text/css" rel="stylesheet" href="美术馆.css">
+</head>
+<body>
+    <a href="http://www.baidu.com" onclick="return false;">click me</a>
+    <!--阻止了默认的跳转-->
+    <a href="http://www.example.com" onclick = "popUp('http://www.example.com'); return false;">Example</a>
+    <a href="http://www.example.com" onclick = "popUp(this.getAttribute('href')); return false;">Example</a>
+    <a href="http://www.example.com" onclick = "popUp(this.href); return false;">Example</a>
+    <!--万一用户禁用javascript，仍然能正常跳转-->
+    <h1>Snapshots</h1>
+    <ul>
+        <li>
+            <a href="img/1.jpg" title="A fireworks display" onclick="showPic(this); return false;">Fireworks</a>
+        </li>
+        <li>
+            <a href="img/2.jpg"  title="A fireworks display" onclick="showPic(this); return false;">Fireworks</a>
+        </li>
+        <li>
+            <a href="img/3.jpg" title="Nagazawa Masami" onclick="showPic(this); return false;">Fireworks</a>
+        </li>
+        <li>
+            <a href="img/4.jpg" title="A fireworks display" onclick="showPic(this); return false;">Fireworks</a>
+        </li>
+    </ul>
+    <img id="placeholder" src="img/5.jpg" alt="my image gallery">
+    <p id="description">Choose an image</p>
+</body>
+</html>
+
