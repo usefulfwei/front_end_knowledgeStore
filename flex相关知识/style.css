@@ -1,0 +1,35 @@
+.box{
+    background-color: black;
+    height:100px;
+    width: 100px;
+}
+.item{
+    color:white;
+    font-size:36px;
+    font-weight:500;
+}
+/*.box{*/
+    /*!*Flex布局默认就是首行左对齐*!*/
+    /*display:flex;*/
+/*}*/
+
+/*.box {*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+/*}*/
+
+/*.box {*/
+    /*display: flex;*/
+    /*justify-content: flex-end;*/
+/*}*/
+.box {
+    display: flex;
+    justify-content: flex-start;
+    /*justify-content: center;*/
+    /*justify-content: flex-end;*/
+
+    /*align-items: center;*/
+    /*align-items: flex-start;*/
+    align-items: flex-end;
+}
+/* 33 得 9 通过搭配不同的主轴和交叉轴，我们可以让点出现在任何一个位置*/

@@ -1,0 +1,27 @@
+.box{
+    background-color: black;
+    height:100px;
+    width: 100px;
+}
+.item{
+    color:white;
+    font-size:36px;
+    font-weight:500;
+}
+.box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row{
+    flex-basis: 100px;
+    display:flex;
+}
+
+.row:nth-child(2){
+    justify-content: center;
+}
+
+.row:nth-child(3){
+    justify-content: space-between;
+}

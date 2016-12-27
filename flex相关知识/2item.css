@@ -1,0 +1,28 @@
+.box{
+    background-color: black;
+    height:100px;
+    width: 100px;
+}
+.item{
+    color:white;
+    font-size:36px;
+    font-weight:500;
+}
+/*.box {*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: space-between;*/
+    /*align-items: flex-start;!*这个是默认*!*/
+    /*!*align-items: center;*!*/
+    /*!*align-items: flex-end;*!*/
+/*}*/
+
+.box {
+    display: flex;
+}
+
+.item:nth-child(2) {
+    /*align-self: center;*/
+    align-self: flex-end;
+}
+/*这里注意 nth-child(2) */

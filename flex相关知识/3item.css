@@ -1,0 +1,21 @@
+.box{
+    background-color: black;
+    height:100px;
+    width: 100px;
+}
+.item{
+    color:white;
+    font-size:36px;
+    font-weight:500;
+}
+.box {
+    display: flex;
+}
+
+.item:nth-child(2) {
+    align-self: center;
+}
+
+.item:nth-child(3) {
+    align-self: flex-end;
+}

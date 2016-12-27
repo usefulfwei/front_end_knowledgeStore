@@ -1,0 +1,7 @@
+.InputAddOn {
+    display: flex;
+}
+
+.InputAddOn-field {
+    flex: 0 0 80%;
+}
