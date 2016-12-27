@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签页</title>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+            <li><a href="#profile" data-toggle="tab">Profile</a></li>
+            <li class="dropdown">
+                <a href="#" id="myTabdrop1" class="dropdown-toggle" data-toggle="dropdown">下拉菜单<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#dropone" tabindex="-1" data-toggle="tab">one</a></li>
+                    <li><a href="#droptwo" tabindex="-1" data-toggle="tab">two</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div id="MyTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="home">
+                <p>Hello, 欢迎你的光临 Hello, 欢迎你的光临 Hello, 欢迎你的光临</p>
+                <p>Hello, 欢迎你的光临 Hello, 欢迎你的光临 Hello, 欢迎你的光临</p>
+                <p>Hello, 欢迎你的光临 Hello, 欢迎你的光临 Hello, 欢迎你的光临</p>
+                <p>Hello, 欢迎你的光临 Hello, 欢迎你的光临 Hello, 欢迎你的光临</p>
+            </div>
+            <div class="tab-pane fade" id="profile">
+                <p>Hello, 欢迎你的光change in content的光临 Hello, 欢迎你的光临</p>
+                <p>Hello, 欢迎你的光临 Hello, 欢迎你的光临 Hello, 欢迎你的光临</p>
+                <p>Hello, 欢迎你的光临 Hello, 欢迎你的光临 Hello, 欢迎你的光临</p>
+                <p>Hello, 欢迎你的光临 Hello, 欢迎你的光临 Hello, 欢迎你的光临</p>
+            </div>
+            <div class="tab-pane fade" id="dropone">
+                <p>ONE 欢迎你的光change in content的光临 Hello, 欢迎你的光临</p>
+                <p>Hello, 欢迎你的光临 Hello, 欢迎你的光临 Hello, 欢迎你的光临</p>
+                <p>Hello, 欢迎你的光临 Hello, 欢迎你的光临 Hello, 欢迎你的光临</p>
+                <p>Hello, 欢迎你的光临 Hello, 欢迎你的光临 Hello, 欢迎你的光临</p>
+            </div>
+            <div class="tab-pane fade" id="droptwo">
+                <p>TWO, 欢迎你的光change in content的光临 Hello, 欢迎你的光临</p>
+                <p>Hello, 欢迎你的光临 Hello, 欢迎你的光临 Hello, 欢迎你的光临</p>
+                <p>Hello, 欢迎你的光临 Hello, 欢迎你的光临 Hello, 欢迎你的光临</p>
+                <p>Hello, 欢迎你的光临 Hello, 欢迎你的光临 Hello, 欢迎你的光临</p>
+            </div>
+        </div>
+    </div>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script>
+        $("#myTab a:last").tab("show");//显示最后一个
+        $("#myTab a:last").tab("show");//
+        $("#myTab li:eq(1)").tab("show");//从0开始，第二个
+        $('a[data-toggle="tab"]').on("shown.bs.tab",function(e){
+            alert("切换了");
+        })
+    </script>
+</body>
+</html>

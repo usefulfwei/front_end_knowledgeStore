@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding:0;
+}
+.header,.container,.footer{
+    margin:10px auto;
+}
+.header{
+    height:100px;
+    background-color: aqua;
+}
+.left,
+.right,
+.main{
+    background-color: antiquewhite;
+}
+.footer{
+    height:100px;
+    background-color: lightgreen;
+}
+@media screen and (min-width:960px)
+{
+    .header,
+    .container,
+    .footer{
+        width:960px;
+    }
+    .left,
+    .main,
+    .right{
+        float:left;
+        height:500px;
+    }
+    .left,
+    .right
+    {
+        width:200px;
+    }
+    .main{
+        margin-left:5px;
+        margin-right:5px;
+        /*margin过大会把right挤下去*/
+        width:550px;
+    }
+    .container{
+        height:500px;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width:960px){
+    .header,
+    .container,
+    .footer{
+        width:600px;
+    }
+    .left,
+    .main
+    {
+        float:left;
+        height:400px;
+    }
+    .right{
+        display:none;
+    }
+    .left
+    {
+        width:155px;
+    }
+    /*宽度必须好好计算，不然显示会错位*/
+    .main{
+        margin-left:5px;
+        margin-right:5px;
+        /*margin过大会把right挤下去*/
+        width:435px;
+    }
+    .container{
+        height:400px;
+    }
+}
+@media screen and  (max-width:600px){
+    .header,
+    .container,
+    .footer{
+        width:400px;
+    }
+    .left,
+    .right{
+        width:400px;
+        height:100px;
+    }
+    .main
+    {
+        margin-top:10px;
+        width:400px;
+        height:200px;
+    }
+    .right{
+        margin-top:10px;
+    }
+    .container{
+        height:420px;
+    }
+}

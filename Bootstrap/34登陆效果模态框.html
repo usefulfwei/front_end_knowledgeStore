@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-whatever="@ime">
+        点击出现
+    </button>
+    <div class="modal fade bs-example-modal-lg" id="myModal" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <!-- lg  默认尺度 sm 三种-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label class="control-label"> username</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">password</label>
+                            <input type="password" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-warning">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script>
+//        $("#myModal").modal("show");
+        $("#myModal").on("show.bs.modal",function(e){
+            var button = $(e.relatedTarget);
+            var recipient = button.data("whatever");
+            var modal = $(this);
+            modal.find(".modal-title").text("hello"+recipient);
+            modal.find(".modal-body input").val(recipient);
+        });
+        $("#myModal").modal({
+            backdrop:false
+            keyboard: false
+        })
+//        $("#myModal").modal("hide");
+        $("#myModal").on("hidden.bs.modal",function(e){
+            alert("关闭了魔胎框");
+        });
+
+    </script>
+</body>
+</html>

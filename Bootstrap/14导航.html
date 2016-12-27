@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <script>
+        $("#mytab a").click(function(e){
+            e.preventDefault();
+            $(this).tab("show");
+        })
+    </script>
+    <div class="container">
+        <ul id="mytab" class="nav nav-tabs" role="tablist">
+            <li role="presentation"><a href="#">home</a></li>
+            <li role="presentation" ><a href="#">hello</a></li>
+            <li role="presentation" class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                world
+                 <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">hello1</a></li>
+                                                                    <!--对键盘党用的，不让键盘上的 tab键(或alt + tab) 按顺序选中 设了 tabindex="-1" 的标签-->
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">hello1</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">hello1</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">hello1</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <ul id="mytab1" class="nav nav-pills nav-justified" role="tablist">
+                                                   <!--两端对齐充满整个container-->
+            <li role="presentation"><a href="#">home</a></li>
+            <li role="presentation" ><a href="#">hello</a></li>
+            <li role="presentation" class="disabled"><a href="#">world</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <ul id="mytab2" class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation"><a href="#">home</a></li>
+            <li role="presentation" ><a href="#">hello</a></li>
+            <li role="presentation" ><a href="#">world</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

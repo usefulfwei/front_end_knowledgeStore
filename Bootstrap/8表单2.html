@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <form role="form">
+        <input type="text" class="form-control">
+        <textarea class="form-control" rows="5">Hello</textarea>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="">
+                吃橘子
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="">
+                吃苹果
+            </label>
+        </div>
+
+
+        <div class="radio">
+            <label>
+                <input type="radio" checked name="optionsRadios">
+                男
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio"  name="optionsRadios">
+                女
+            </label>
+        </div>
+
+        <select multiple class="form-control">
+                <!--全部显示-->
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+
+        <p class="form-control-static">请按照我的格式输入：name@email.com</p>
+
+
+        <input class="form-control" type="text" placeholder="hello" disabled>
+
+
+    </form>
+    <!--<fieldset disabled>-->
+              <!--&lt;!&ndash;内部所有表格不可选&ndash;&gt;-->
+        <!--<form role="form">-->
+            <!--<input type="text" class="form-control">-->
+            <!--<textarea class="form-control" rows="5">Hello</textarea>-->
+
+            <!--<div class="checkbox">-->
+                <!--<label>-->
+                    <!--<input type="checkbox" value="">-->
+                    <!--吃橘子-->
+                <!--</label>-->
+            <!--</div>-->
+            <!--<div class="checkbox">-->
+                <!--<label>-->
+                    <!--<input type="checkbox" value="">-->
+                    <!--吃苹果-->
+                <!--</label>-->
+            <!--</div>-->
+
+
+            <!--<div class="radio">-->
+                <!--<label>-->
+                    <!--<input type="radio" checked name="optionsRadios">-->
+                    <!--男-->
+                <!--</label>-->
+            <!--</div>-->
+            <!--<div class="radio">-->
+                <!--<label>-->
+                    <!--<input type="radio"  name="optionsRadios">-->
+                    <!--女-->
+                <!--</label>-->
+            <!--</div>-->
+
+            <!--<select multiple class="form-control">-->
+                <!--&lt;!&ndash;全部显示&ndash;&gt;-->
+                <!--<option selected>1</option>-->
+                <!--<option>2</option>-->
+                <!--<option>3</option>-->
+                <!--<option>4</option>-->
+            <!--</select>-->
+
+            <!--<p class="form-control-static">请按照我的格式输入：name@email.com</p>-->
+
+
+            <!--<input class="form-control" type="text" placeholder="hello" disabled>-->
+
+
+        <!--</form>-->
+    <!--</fieldset>-->
+    <input class="form-control" type="text" readonly>
+                                                    <!--只读-->
+
+    <form role="form">
+        <div class="form-control has-warning has-feedback col-xs-6">
+            <label>用户ing</label>
+            <input class="form-control" type="text">
+            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                           <!--图标类去getbootstrap找，要用网络link css-->
+        </div>
+        <div class="form-control has-success">
+            <label>用户ing</label>
+            <input class="form-control" type="text">
+            <span class="gglyphicon glyphicon-download form-control"></span>
+        </div>
+        <div class="form-control has-warning">
+            <label>用户ing</label>
+            <input class="form-control" type="text">
+            <span class="glyphicon glyphicon-off form-control"></span>
+        </div>
+        <span class="help-block">辅助文本</span>
+    </form>
+</body>
+</html>

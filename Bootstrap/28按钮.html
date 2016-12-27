@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <button type="button" data-loading-text="loading for 3 seconds" class="btn btn-primary js-loading-button">
+            Loading state
+        </button>
+
+        <button type="button" class="btn btn-default" data-toggle="button" autocomplete="off">Hello</button>
+
+
+        <div class="btn-group" data-toggle="buttons">
+            <!--多选按钮组-->
+            <label class="btn btn-primary active">
+                <input type="checkbox" autocomplete="off" checked>选择1
+            </label>
+            <label class="btn btn-primary ">
+                <input type="checkbox" autocomplete="off" >选择2
+            </label>
+            <label class="btn btn-primary ">
+                <input type="checkbox" autocomplete="off" >选择3
+            </label>
+        </div>
+
+        <div class="btn-group" data-toggle="buttons">
+            <!--多按钮单选框， name相同-->
+            <label class="btn btn-primary active">
+                <input type="radio" name="options" autocomplete="off" checked>单选1
+            </label>
+            <label class="btn btn-primary ">
+                <input type="radio" name="options" autocomplete="off" >单选2
+            </label>
+            <label class="btn btn-primary ">
+                <input type="radio" name="options" autocomplete="off" >单选3
+            </label>
+            <label class="btn btn-primary ">
+                <input type="radio" name="options" autocomplete="off" >单选4
+            </label>
+        </div>
+
+        <button type="button" data-complete-text="finish" class="btn btn-primary mybtn" autocomplete="off">Hello</button>
+                                <!--触发complete事件后显示的文字-->
+    </div>
+<script>
+    $(".js-loading-button").on("click",function(e){
+         var btn = $(this).button("loading");
+        setTimeout(function(e){
+            btn.button("reset")
+        },3000);
+    })
+
+    $(".mybtn").on('click',function(event){
+        $(this).button('complete');/*显示data-complete-text的内容*/
+    })
+    /*$().button('toggle')
+
+     Toggles push state. Gives the button the appearance that it has been activated.
+
+     $().button('reset')
+
+     Resets button state - swaps text to original text.
+
+     $().button(string)
+
+     Swaps text to any data defined text state*/
+</script>
+</body>
+</html>

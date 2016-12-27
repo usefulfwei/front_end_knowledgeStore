@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出框</title>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <button type="button" class="btn btn-default js-popover" data-toggle="popover" title="标题"
+                data-content="这里是内容区域" data-placement="bottom" data-trigger="focus" data-animation="false">弹出框</button>
+                                                                            <!--data-trigger="focus" 这个属性使得点击空白处弹出框消失，否则再次点击按钮消失-->
+
+        <a href="#" tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover"
+           data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+    </div>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script>
+        $(".js-popover").popover();
+        $(".js-popover").popover("show");//直接显示
+        $(".js-popover").on('hidden.bs.popover',function(){
+            alert("已经隐藏了");
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+.row{
+    margin-bottom:20px;
+}
+.row .row{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+[class*="col-"]{
+    padding-top:15px;
+    padding-bottom:15px;
+    background-color:gray;
+    background-color:rgba(86,61,124,.15);
+    /*    框内实体背景颜色       */
+    border:1px solid #dddddd;
+    border:1px solid rgba(86,61,124,.2);
+    /*        边框              */
+}

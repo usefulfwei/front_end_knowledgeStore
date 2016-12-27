@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collapse</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample">点击查看</a>
+        <div class="collapse" id="collapseExample">
+            <div class="well">
+                hello
+            </div>
+        </div>
+
+        <div class="panel-group" id="accordion" role="tablist">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Item1</a>
+                                                    <!--最外层div accordion-->
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel">
+                                                                            <!--展开in-->
+                    <div class="panel-body">
+                        欢迎你 欢迎你 欢迎你
+                        欢迎你 欢迎你 欢迎你
+                        欢迎你 欢迎你 欢迎你
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Item2</a>
+                        <!--最外层div accordion-->
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse " role="tabpanel">
+                    <!--展开in-->
+                    <div class="panel-body">
+                        欢迎你 欢迎你 欢迎你
+                        欢迎你 欢迎你 欢迎你
+                        欢迎你 欢迎你 欢迎你
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Item3</a>
+                        <!--最外层div accordion-->
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse " role="tabpanel">
+                    <!--展开in-->
+                    <div class="panel-body">
+                        欢迎你 欢迎你 欢迎你
+                        欢迎你 欢迎你 欢迎你
+                        欢迎你 欢迎你 欢迎你
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        $("#accordion").on('hidden.bs.collapse',function(){
+            alert("Hello!");
+        })
+
+        /*
+        * $('#myCollapsible').collapse({
+         toggle: false
+         })
+         .collapse('toggle')
+         Toggles a collapsible element to shown or hidden.
+         .collapse('show')
+         Shows a collapsible element.
+         .collapse('hide')
+         Hides a collapsible element
+
+
+         show.bs.collapse	This event fires immediately when the show instance method is called.
+         shown.bs.collapse	This event is fired when a collapse element has been made visible to the user (will wait for CSS transitions to complete).
+         hide.bs.collapse	This event is fired immediately when the hide method has been called.
+         hidden.bs.collapse	This event is fired when a collapse element has been hidden from the user (will wait for CSS transitions to complete).
+
+         $('#myCollapsible').on('hidden.bs.collapse', function () {
+         // do something…
+         })
+
+         */
+    </script>
+</body>
+</html>

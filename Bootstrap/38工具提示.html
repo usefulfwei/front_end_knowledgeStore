@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工具提示</title>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <p class="muted" style="margin-bottom:0">
+            欢迎你<a id="mytooltip" href="#" data-toggle="tooltip"
+                  data-animation="false"
+                  title="title" data-placement="bottom" data-original-title="啊啊啊，大牛我爱你">Cristiano Ronaldo</a> 啊 欢迎你 你来了就是大腿 我们都听你的
+                                                                          <!--优先显示title，title为空显示data-original-title-->
+                                                                                        <!--data-placement bottom left right top-->
+            欢迎你 啊 欢迎你 你来了就是大腿 我们都听你的
+            欢迎你 啊 欢迎你 你来了就是大腿 我们都听你的
+        </p>
+    </div>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script>
+        $("#mytooltip").tooltip("show");//鼠标未移动过去就显示
+//        $('[data-toggle="tooltip"]').tooltip();
+        $("#mytooltip").on("hidden.bs.tooltip",function(e){
+            alert("hello");
+        })
+    </script>
+</body>
+</html>

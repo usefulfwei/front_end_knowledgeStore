@@ -1,0 +1,271 @@
+h1,h3,p,a,button{
+    font-family: "Times New Roman";
+}
+.side-nav{
+    position:fixed;
+    top:45%;
+    right:20px;
+    z-index:1;
+    /*不被覆盖在z-index=0层之上*/
+}
+.side-nav ul.nav-side-nav{
+    text-align:center;
+    list-style:none;
+    margin:0;
+    padding-left:0;
+}
+.side-nav ul.nav-side-nav>li{
+    display:block;
+    line-height:1.45em;
+    margin:0;
+    padding:8px 0;
+}
+.side-nav ul.nav-side-nav>li>a{
+    display:block;
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    background:#e2e2e2;
+}
+.onepage{
+    height:750px;
+}
+.onepage-bg{
+    height:800px;
+    width:100%;
+    position:absolute;
+    background-position: center center;
+                            /*水平     垂直*/
+    background-size:cover;
+}
+#onpage-bg{
+    background-image:url("") ;
+}
+.head1content{
+    margin-top:150px;
+    line-height:75px;
+}
+.title-text{
+    margin-left:50px;
+}
+.headfontsize h1{
+    font-size:50pt;
+    /*
+    Px 像素Pixel；相对长度单位。
+Pt 点（Point）；绝对长度单位
+Em 相对长度单位，这里em与html <em>标签的"EM"拼写完全相同，而这里em作为单独文本单位*/
+    color:white;
+}
+.headfontsize p{
+    color:white;
+}
+
+/***************************/
+/***************************/
+
+.twopage{
+    padding:2px 0 0 2px;
+    height:auto;
+    background-image:url("");
+    position: relative;
+}
+.twopage-text{
+    width:100%;
+    text-align:center;
+}
+.twopage-text-h1{
+    margin-left:120px;
+    letter-spacing: 2px;
+    /*调整字体边距*/
+    margin-top:80px;
+    margin-bottom:0;
+    padding:20px 0 0 0;
+}
+.twopage-text-h1 img{
+    width:120px;
+    margin-top:-20px;
+}
+.twopage .row{
+    margin-right:0px;
+    margin-left:0px;
+    /*禁止左右滑动*/
+}
+.twopage-course{
+    float:left;
+    height:auto;
+    background:#ffffff;
+    padding:0 2px 2px 0;
+    position:relative;
+    overflow:hidden;
+}
+.twopage-course >a{
+    width:100%;
+    height:100px;
+    float:left;
+    text-align:center;
+    position:relative;
+}
+.classicon h3{
+    margin-top:120px;
+    color:#d1e973;
+}
+.classicon h1{
+    color:#fff5e1;
+}
+.classicon{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    color:#fff;
+    opacity: 0;
+    /*隐藏不显示*/
+}
+.classicon:hover{
+    background:#1eb450;
+    opacity:0.9;
+    transition:opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+}
+.twopagebtn{
+    width:100%;
+    margin:0 auto;
+    text-align:center;
+}
+.twopagebtn .btn-lg{
+    font-size:25px;
+    /*重写字体大小*/
+}
+#twopage-easy{
+    margin:50px  0;
+    margin-bottom: 100px;
+}
+
+/******************************/
+/******************************/
+/******************************/
+.threepage{
+    position:absolute;
+    height:800px;
+    width:100%;
+}
+.threepage-bg{
+    position: absolute;
+    height:100%;
+    width:100%;
+    background-position: center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+#threepage-bg{
+    background-image: url("");
+}
+.threepagecontent{
+    width:100%;
+    margin:0 auto;
+    text-align:center;
+}
+.threepagetext{
+    margin-top:100px;
+}
+.threepagetext p{
+    margin-top:20px;
+    color:black;
+    font-size:20px;
+    line-height:32px;
+}
+.threepagebtncontent{
+    margin-top:450px;
+    font-size:25px;
+    /*通过放大字体来撑大按键*/
+}
+/******************************/
+/******************************/
+/******************************/
+.fourpage{
+    height:700px;
+    background-image: url("");
+    margin-top:800px;
+}
+.coursexingqing-text{
+    color:white;
+    margin-top:100px;
+    width:100%;
+    text-align: center;
+}
+.coursexingqing-text p{
+    margin-top:25px;
+    font-size:25px;
+}
+.fourpage .container .carousel{
+   margin-top:100px;
+}
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(rgba(0,0,0,0)));
+    background-image: linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(rgba(0,0,0,0)));
+    background-image: linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    background-repeat: repeat-x;
+    /*先去浏览器检查，查找到问题然后再调整*/
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    left: -20%;
+    /*margin-left: -10px;*/
+}
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+    right: -20%;
+    /*margin-right: -10px;*/
+}
+
+/*********************************************/
+/*********************************************/
+/*********************************************/
+/*********************************************/
+.fivepage-bg{
+    height:800px;
+    width:100%;
+    position:absolute;
+    background-position:center center;
+    background-size:cover;
+}
+#fivepage{
+    background-image:url("");
+}
+.footertext{
+    margin-top:55px;
+    width:100%;
+    color:black;
+    font-size:20px;
+    text-align:center;
+}
+.footerbtncenter{
+    margin-top:100px;
+    text-align:center;
+}
+.queyeicon{
+    width:200px;
+}
+.queyeicon:hover{
+    border:2px solid pink;
+}
+.footertextbtn{
+    margin-top:150px;
+    width:100%;
+    text-align:center;
+}
+.footertextbtn-text{
+    margin-top:20px;
+    color:black;
+}

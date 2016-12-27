@@ -1,0 +1,66 @@
+*{
+    padding:0;
+    margin:0;
+}
+.navbar .navbar-header>a>h2
+{
+    color:red;
+    font-weight: bold;
+}
+.navbar .navbar-collapse>ul>li{
+    padding-left: 5px;
+    padding-right:5px;
+    padding-top: 2px;
+}
+.navbar .navbar-collapse>ul>li>a{
+    font-size: 25px;
+    color:white;
+}
+.pminfobox{
+    padding:10px 0;
+}
+.pminfobox .pmpic{
+    padding:10% 0;
+}
+.pminfo{
+    padding:10px 20px 0 0;
+}
+textarea{
+    height:150px;
+    border:1px solid gray;
+    box-shadow: 0 0 5px gray;
+}
+.reply button{
+    margin:0 auto;
+   font-size:16px;
+}
+@media screen and (min-width:1024px){
+    textarea{
+        width:530px;
+    }
+}
+@media screen and (max-width:1024px){
+    textarea{
+        width:530px;
+    }
+}
+@media screen and (max-width:768px){
+    textarea{
+        width:350px;
+    }
+}
+@media screen and (max-width:550px){
+    textarea{
+        width:300px;
+    }
+}
+@media screen and (max-width:360px){
+    textarea{
+        width:250px;
+    }
+}
+@media screen and (max-width:320px){
+    textarea{
+        width:200px;
+    }
+}

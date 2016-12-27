@@ -1,0 +1,31 @@
+.navbar .navbar-header>a>h2
+{
+    color:red;
+    font-weight: bold;
+}
+.navbar .navbar-collapse>ul>li{
+    padding-left: 5px;
+    padding-right:5px;
+    padding-top: 2px;
+}
+/*.navbar .navbar-collapse>ul>li>a{*/
+    /*font-size: 25px;*/
+    /*color:white;*/
+/*}*/
+.modal .modal-header .modal-title{
+    color:red;
+    font-weight:bold;
+}
+.container .page-header .text-capitalize{
+    text-align: center;
+}
+.searchbox{
+    padding-bottom:10px;
+    display:inline;
+}
+.searchbox .btn-sm{
+    font-size:15px;
+}
+.jumbotron{
+    background:transparent;
+}
