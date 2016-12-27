@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lifting State Up</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+</head>
+<body>
+Often, several components need to reflect the same changing data.
+We recommend lifting the shared state up to their closest common ancestor.
+<script type="text/babel">
+    function BoilingVerdict(props) {
+        if (props.celsius >= 100) {
+            return <p>The water would boil.</p>;
+        }
+        return <p>The water would not boil.</p>;
+    }
+    class Calculator extends React.Component{
+        constructor(props){
+            super(props);
+            this.handleChange = this.handleChange.bind(this);
+    }
+        handleChange(e){
+            this.setState({value:e.target.value});
+        }
+        render(){
+            const value = this.state.value;
+            return(
+                    <fieldset>
+                        <legend>Enter temperature in Celsius:</legend>
+                        <input
+                        value={value}
+                        onChange={this.handleChange}/>
+                        <BoilingVerdict
+                        celsius = {parseFloat(value)}
+                        />
+                    </fieldset>
+            )
+        }
+    }
+    ReactDOM.render(
+            <Calculator />,document.body
+    )
+
+</script>
+</body>
+</html>

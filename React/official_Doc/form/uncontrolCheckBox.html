@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Form extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {checked: {'A': false, 'B': true, 'C': false}};
+                this.handleChange = this.handleChange.bind(this);
+                this.handleSubmit = this.handleSubmit.bind(this);
+            }
+            handleChange(event) {
+                const value = event.target.value;
+                // Copy the object so we don't mutate the old state.
+                // (This requires an Object.assign polyfill):
+                const checked = Object.assign({}, this.state.checked)
+                //Object.assign() 方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。
+                //Object.assign(target, ...sources)
+                if (!checked[value]) {
+                    checked[value] = true;
+                } else {
+                    checked[value] = false;
+                };
+                this.setState({checked});
+            }
+
+            handleSubmit(event) {
+                alert('Boxes checked: ' +
+                        (this.state.checked.A ? 'A ' : '') +
+                        (this.state.checked.B ? 'B ' : '') +
+                        (this.state.checked.C ? 'C' : '')
+                );
+            }
+
+            render() {
+                return (
+                        <div>
+                            <label>
+                                <input
+                                        type="checkbox"
+                                        value="A"
+                                        onChange={this.handleChange} />
+                                Option A
+                            </label>
+                            <br />
+                            <label>
+                                <input
+                                        type="checkbox"
+                                        value="B"
+                                        onChange={this.handleChange}
+                                        defaultChecked={true} />
+                                Option B
+                            </label>
+                            <br />
+                            <label>
+                                <input
+                                        type="checkbox"
+                                        value="C"
+                                        onChange={this.handleChange} />
+                                Option C
+                            </label>
+                            <br />
+                            <br />
+                            <button onClick={this.handleSubmit}>
+                                Submit
+                            </button>
+                        </div>
+                );
+            }
+        }
+
+        ReactDOM.render(
+                <Form />,
+                document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

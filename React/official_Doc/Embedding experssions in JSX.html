@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build1/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build1/browser.min.js"></script>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script type="text/babel">
+        function formatName(user) {
+            return user.firstName + ' ' + user.lastName;
+        }
+        /*
+        * can use JSX inside of if statements and for loops,
+         * assign it to variables, accept it as arguments,
+         * and return it from functions*/
+        function getGreeting(user) {
+            if (user) {
+                return <h1>Hello, {formatName(user)}!</h1>;
+            }
+            return <h1>Hello, Stranger.</h1>;
+        }
+
+        const user = {
+            firstName: 'Harper',
+            lastName: 'Perez'
+        };
+
+        const element = (
+                <h1>
+                    Hello, {formatName(user)}!
+                </h1>
+        );
+//        may use quotes to specify string literals as attributes:
+        const element2 = <div tabIndex="0"></div>;
+
+        const element3 = <img src={user.avatarUrl}></img>;
+
+        //may have children
+        const element4 = (
+                <div>
+                    <h1>Hello!</h1>
+                    <h2>Good to see you here.</h2>
+                </div>
+        );
+        //class becomes className in JSX, and tabindex becomes tabIndex. for becomes htmlFor
+
+//        JSX Prevents Injection Attacks
+//        It is safe to embed user input in JSX:
+
+        const title1 = response.potentiallyMaliciousInput;
+        // This is safe:
+        const element5 = <h1>{title}</h1>;
+//        By default, React DOM escapes any values embedded in JSX
+        // before rendering them.
+
+//        Babel compiles JSX down to React.createElement() calls
+        //both two following are identicals
+        const element6 = (
+                <h1 className="greeting">
+                    Hello, world!
+                </h1>
+        );
+        const element6_copy = React.createElement(
+                'h1',
+                {className: 'greeting'},
+                'Hello, world!'
+        );
+
+        ReactDOM.render(
+                element,
+                document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

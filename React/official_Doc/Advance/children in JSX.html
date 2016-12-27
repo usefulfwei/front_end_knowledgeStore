@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/babel">
+  class MyComponent extends React.Component{
+    render(
+
+    )
+  }
+  <MyComponent>Hello world!</MyComponent>
+  /*You can put a string between the
+  opening and closing tags and props.
+  children will just be that string.*/
+  /*props.children in MyComponent
+   will simply be the string "Hello world!"*/
+</script>
+<script type="text/babel">
+//  HTML is unescaped,
+<div>This is valid HTML &amp; JSX at the same time.</div>
+</script>
+
+<div>
+  Here is a list:
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+</div>
+<!--react组件无法返回多个react组件-->
+<!--a single JSX expression can have multiple children,-->
+<!--如果想返回多个元素，请放在div内-->
+
+function as children
+<script type="text/babel">
+  function ListOfTenThings() {
+    return (
+            <Repeat numTimes={10}>
+              {(index) => <div key={index}>This is item {index} in the list</div>}
+            </Repeat>
+    );
+  }
+
+  // Calls the children callback numTimes to produce a repeated component
+  function Repeat(props) {
+    let items = [];
+    for (let i = 0; i < props.numTimes; i++) {
+      items.push(props.children(i));
+    }
+    return <div>{items}</div>;
+  }
+</script>
+<!--false, null, undefined, and true are valid children. They simply don't render.-->
+  <div />
+
+  <div></div>
+
+  <div>{false}</div>
+
+  <div>{null}</div>
+
+  <div>{true}</div>
+This can be useful to conditionally render React elements.
+This JSX only renders a <Header /> if showHeader is true
+  <div>
+    {showHeader && <Header />}
+    <Content />
+  </div>
+such as the 0 number, are still rendered by React.
+  <div>
+    {props.messages.length &&
+    <MessageList messages={props.messages} />
+    }
+  </div>
+To fix this, make sure that the expression before && is always boolean:
+<div>
+  {props.messages.length > 0 &&
+  <MessageList messages={props.messages} />
+  }
+</div>
+
+Conversely, if you want a value like false, true, null, or undefined
+to appear in the output,
+you have to convert it to a string first:
+<div>
+  My JavaScript variable is {String(myVariable)}.
+</div>
+</body>
+</html>

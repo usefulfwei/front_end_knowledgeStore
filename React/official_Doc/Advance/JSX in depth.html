@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/babel">
+  const MyComponents = {
+    DatePicker: function DatePicker(props) {
+      return <div>Imagine a {props.color} datepicker here.</div>;
+    }
+  }
+
+  function BlueDatePicker() {
+    return <MyComponents.DatePicker color="blue" />;
+  }
+</script>
+User-Defined Components Must Be Capitalized
+<script type="text/babel">
+  // Correct! This is a component and should be capitalized:
+  function Hello(props) {
+    // Correct! This use of <div> is legitimate because div is a valid HTML tag:
+    return <div>Hello {props.toWhat}</div>;
+  }
+
+  function HelloWorld() {
+    // Correct! React knows <Hello /> is a component because it's capitalized.
+    return <Hello toWhat="World" />;
+  }
+</script>
+You cannot use a general expression as the React element type.
+If you do want to use a general expression to indicate the type of the element,
+just assign it to a capitalized variable first.
+<script type="text/babel">
+//  import React from 'react';
+//  import { PhotoStory, VideoStory } from './stories';
+//
+//  const components = {
+//    photo: PhotoStory,
+//    video: VideoStory
+//  };
+//
+//  function Story(props) {
+//    // Wrong! JSX type can't be an expression.
+//    return <components[props.storyType] story={props.story} />;
+//  }
+</script>
+<script type="text/babel">
+  import React from 'react';
+  import { PhotoStory, VideoStory } from './stories';
+
+  const components = {
+    photo: PhotoStory,
+    video: VideoStory
+  };
+
+  function Story(props) {
+    // Correct! JSX type can be a capitalized variable.
+    const SpecificStory = components[props.storyType];
+    return <SpecificStory story={props.story} />;
+  }
+</script>
+
+<script type="text/babel">
+  //You can pass any JavaScript expression as a prop, by surrounding it with {}
+  <MyComponent foo={1 + 2 + 3 + 4} />
+  //The value of props.foo will be 10 because the expression 1 + 2 + 3 + 4 gets evaluated.
+</script>
+<script type="text/babel">
+  /*if statements and for loops are not expressions in JavaScript,
+  so they can't be used in JSX directly.
+   Instead, you can put these in the surrounding code. */
+  function NumberDescriber(props){
+    let description;
+    if (props.number % 2 == 0) {
+      description = <strong>even</strong>;
+    } else {
+      description = <i>odd</i>;
+    }
+    return <div>{props.number} is an {description} number</div>;
+  }
+</script>
+
+<script type="text/babel">
+  // pass a string literal as a prop
+  //two JSX expressions are equivalent:
+//  <MyComponent message="hello world" />
+//
+//  <MyComponent message={'hello world'} />
+</script>
+<script type="text/babel">
+//  When you pass a string literal, its value is HTML-unescaped.
+//<MyComponent message="&lt;3" />
+//
+//<MyComponent message={'<3'} />
+</script>
+
+<script type="text/babel">
+  //Props Default to "True"
+//  <MyTextBox autocomplete />
+//
+//  <MyTextBox autocomplete={true} />
+</script>
+<script type="text/babel">
+/*If you already have props as an object, and you want to pass it in JSX,
+you can use ... as a "spread" operator to pass the whole props object*/
+function App1() {
+  return <Greeting firstName="Ben" lastName="Hector" />;
+}
+
+function App2() {
+  const props = {firstName: 'Ben', lastName: 'Hector'};
+  return <Greeting {...props} />;
+}
+</script>
+
+</body>
+</html>

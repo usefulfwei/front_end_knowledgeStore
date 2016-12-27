@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        //通过value值进行control
+        class Form extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {value: ''};
+                this.handleChange = this.handleChange.bind(this);
+                this.handleSubmit = this.handleSubmit.bind(this);
+                this.handleClearClick = this.handleClearClick.bind(this);
+                //把按钮和文本输入进行绑定
+            }
+
+            handleChange(event) {
+                this.setState({value: event.target.value});
+            }
+//            handleChange(event) {
+//                this.setState({
+//                    value: event.target.value.substr(0, 140)
+//                });
+//            }
+//            This would accept user input and truncate the value to the first 140 characters.
+
+            handleSubmit(event) {
+                alert('Text field value is: ' + this.state.value);
+            }
+            handleClearClick(event) {
+                this.setState({
+                    value: ''
+                });
+            }
+            render() {
+                return (
+                        <div>
+                            <input type="text"
+                                   placeholder="Hello!"
+                                   value={this.state.value}
+                                   onChange={this.handleChange} />
+                            <button onClick={this.handleSubmit}>
+                                Submit
+                            </button>
+                            <button onClick={this.handleClearClick}>
+                                Clear
+                            </button>
+                        </div>
+                );
+            }
+        }
+        ReactDOM.render(
+                <Form />,
+                document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

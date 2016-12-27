@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build1/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build1/browser.min.js"></script>
+</head>
+<body>
+    <script type="text/babel">
+        //fick reusable same div being recalled for several times
+        function tick() {
+            const element = (
+                    <div>
+                        <h1>Hello, world!</h1>
+                        <h2>It is {new Date().toLocaleTimeString()}.</h2>
+                    </div>
+            );
+            ReactDOM.render(
+                    element,
+                    document.getElementById('root')
+            );
+        }
+        setInterval(tick, 1000);
+        ////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////
+        //encapsulating how the clock looks
+        function Clock(props) {
+            return (
+                    <div>
+                        <h1>Hello, world!</h1>
+                        <h2>It is {props.date.toLocaleTimeString()}.</h2>
+                    </div>
+            );
+        }
+
+        function tick() {
+            ReactDOM.render(
+                    <Clock date={new Date()} />,
+                    document.getElementById('root')
+            );
+        }
+        //////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////
+        //write this once and have the Clock update itself
+        // function to a ES6 class
+//        Converting a Function to a Class
+//        You can convert a functional component like Clock to a class in five steps:
+//        Create an ES6 class with the same name that extends React.Component.
+//        Add a single empty method to it called render().
+//        Move the body of the function into the render() method.
+//        Replace props with this.props in the render() body.
+//        Delete the remaining empty function declaration.
+        class Clock extends React.Component{
+            render(){
+                return(
+                        <div></div>
+                )
+            }
+        }
+
+        class Clock extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {date: new Date()};
+            }
+//Add a class constructor that assigns the initial this.state:
+//Class components should always call the base constructor with props.
+            render() {
+                return (
+                        <div>
+                            <h1>Hello, world!</h1>
+                            <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+                        </div>
+                );
+ //1) Replace this.props.date with this.state.date in the render() method
+            }
+        }
+        ReactDOM.render(
+                <Clock />,
+                document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

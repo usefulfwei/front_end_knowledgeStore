@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/babel">
+  class Greeting extends React.Component{
+    render(){
+      return(
+              <h1>Hello,{this.props.name}</h1>
+      )
+    }
+  }
+  Greeting.proTypes = {
+    name:React.PropTypes.string
+//React.PropTypes exports a range of validators
+// that can be used to make sure the data you receive is valid
+  }
+</script>
+Requiring single children
+<script type="text/babel">
+  class MyComponent extends React.Component{
+    render(){
+      const children = this.props.children;
+      return(
+              <div>
+                {children};
+              </div>
+      )
+    }
+  }
+  MyComponent.propTypes = {
+    children: React.PropTypes.element.isRequired
+  };
+  /*With React.PropTypes.element
+  you can specify that only a single child can be passed to a component as children.*/
+</script>
+<script type="text/babel">
+  //Default Prop Values
+  class Greeting extends React.Component{
+    render(){
+      return(
+              <h1>Hello,{this.props.name}</h1>
+      )
+    }
+  }
+  Greeting.defaultProps = {
+    name:'Stranger'
+  }//默认属性值
+  ReactDOM.render(
+          <Greeting />,
+          document.getElementById('example')
+  );
+</script>
+</body>
+</html>

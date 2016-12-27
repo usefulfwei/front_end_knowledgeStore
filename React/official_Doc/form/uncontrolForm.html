@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+    <script type="text/babel">
+        class Form extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {value: ''};
+                this.handleChange = this.handleChange.bind(this);
+                this.handleSubmit = this.handleSubmit.bind(this);
+            }
+
+            handleChange(event) {
+                // Note: with uncontrolled inputs, you don't
+                // have to put the value in the state.
+                this.setState({value: event.target.value});
+            }
+
+            handleSubmit(event) {
+                alert('Text field value is: ' + this.state.value);
+            }
+
+            render() {
+                return (
+                        <div>
+                            <input
+                                    type="text"
+                                    placeholder="Hello!"
+                                    onChange={this.handleChange} />
+                            <button onClick={this.handleSubmit}>
+                                Submit
+                            </button>
+                        </div>
+                );
+            }
+//            render() {
+//                return <input type="text" defaultValue="Hello!" />;
+//            }
+        }
+
+        ReactDOM.render(
+                <Form />,
+                document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

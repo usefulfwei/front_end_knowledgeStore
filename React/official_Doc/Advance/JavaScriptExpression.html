@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script type="text/babel">
+  /*You can pass any JavaScript expression
+  as children, by enclosing it within {}*/
+  <MyComponent>foo</MyComponent>
+
+  <MyComponent>{'foo'}</MyComponent>
+</script>
+
+<script type="text/babel">
+//  rendering a list of JSX expressions of arbitrary length
+  function Item(props) {
+    return <li>{props.message}</li>;
+  }
+
+  function TodoList() {
+    const todos = ['finish doc', 'submit pr', 'nag dan to review'];
+    return (
+            <ul>
+              {todos.map((message) => <Item key={message} message={message} />)}
+            </ul>
+    );
+  }
+</script>
+<!--JavaScript expressions can be mixed with other types of children.-->
+<script type="text/babel">
+  function Hello(props) {
+    return <div>Hello {props.addressee}!</div>;
+  }
+</script>
+</body>
+</html>

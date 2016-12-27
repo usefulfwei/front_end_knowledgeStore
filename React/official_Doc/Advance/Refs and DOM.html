@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="./build/react.js"></script>
+  <script src="./build/react-dom.js"></script>
+  <script src="./build/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<!--ref takes a callback function which would be executed-->
+<!--immediately after the component is mounted or unmounted.-->
+<script type="text/babel">
+  class CustomTextInput extends React.Component {
+    constructor(props) {
+      super(props);
+      this.focus = this.focus.bind(this);
+    }
+
+    focus() {
+      // Explicitly focus the text input using the raw DOM API
+      this.textInput.focus();
+    }
+
+    render() {
+      // Use the `ref` callback to store a reference to the text input DOM
+      // element in this.textInput.
+      return (
+              <div>
+                <input
+                        type="text"
+                        ref={(input) => this.textInput = input} />
+                <input
+                        type="button"
+                        value="Focus the text input"
+                        onClick={this.focus}
+                />
+              </div>
+      );
+    }
+  }
+</script>
+<!--React will call the ref callback with the DOM element-->
+<!--when the component mounts,-->
+<!--and call it with null when it unmounts-->
+
+
+
+<!--You may not use the ref attribute on functional components-->
+<!--because they don't have instances. You can, however,-->
+<!--use the ref attribute inside the render function of a functional component:-->
+<script type="text/babel">
+  function CustomTextInput(props){
+    let textInput = null;
+
+    function handleClick(){
+      textInput.focus();
+    }
+    return(
+            <div>
+              <input type="text"
+              ref={(input) => textInput = input }/>
+              <input type="button"
+              value="Focus the text input"
+              onClick={handleClick}
+              />
+            </div>
+    )
+  }
+  ReactDOM.render(
+          <CustomTextInput />,
+          document.getElementById('root')
+  );
+</script>
+</body>
+</html>
